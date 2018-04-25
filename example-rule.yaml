@@ -1,0 +1,21 @@
+name: "Some rule"
+type: frequency
+num_events: 5
+timeframe:
+  minutes: 5
+
+index: logstash-*
+
+filter:
+- term:
+    code: 132
+
+alert:
+- "slack"
+
+#alert_text: "{0} registered code {1}"
+#alert_text_args: ["container_name", "code"]
+#alert_text_type: alert_text_only
+
+#slack:
+#slack_webhook_url:
